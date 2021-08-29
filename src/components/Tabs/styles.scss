@@ -1,0 +1,26 @@
+@use '/src/styles/colors';
+
+.Tabs--root {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+
+    > li {
+        float: left;
+        padding: 4px 16px;
+        > .hr {
+            height: 2px;
+            margin: 4px 8px 0px;
+            background-color: colors.$tertiary;
+        }
+    }
+
+    > :last-child {
+        padding-right: 0px;
+    }
+
+    > :first-child {
+        padding-left: 0px;
+    }
+}

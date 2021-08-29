@@ -1,0 +1,150 @@
+@use '/src/styles/fonts';
+//new-font-size = old-font-size * 0.677
+
+.italic {
+    font-style: italic;
+}
+
+.condensed {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.medium {
+    font-weight: 400;
+}
+
+.regular {
+    font-weight: 300;
+}
+
+.light {
+    font-weight: 200;
+}
+
+.extra-light {
+    font-weight: 100;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.font-family-primary {
+    font-family: fonts.$primary;
+}
+
+.font-family-secondary {
+    font-family: fonts.$secondary;
+}
+
+.title-1 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 44pt; //65pt
+}
+
+.title-2 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 37pt;
+}
+
+.title-3 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 34pt;
+}
+
+.title-4 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 32.5pt;
+}
+
+.title-5 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 23pt;
+}
+
+.title-6 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 20pt;
+}
+
+.label-1 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 19pt;
+}
+
+.label-2 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 19pt;
+}
+
+.label-3 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 16pt;
+}
+
+.label-4 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 15pt;
+}
+
+.label-5 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 14pt;
+}
+
+.label-6 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 13.5pt;
+}
+
+.label-7 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 13.5pt;
+}
+
+.label-8 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 12pt;
+}
+
+.label-9 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 12pt;
+}
+
+.label-10 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 11pt;
+}
+
+.label-11 {
+    @extend .no-margin;
+    @extend .font-family-primary;
+    font-size: 11pt;
+}
+
+.label-12 {
+    @extend .no-margin;
+    @extend .font-family-secondary;
+    font-size: 9pt;
+}

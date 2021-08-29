@@ -1,0 +1,13 @@
+@use '/src/styles/colors';
+
+.ProductCard--root {
+    > .price {
+        color: colors.$secondary;
+        margin-top: 8px;
+    }
+
+    > .title {
+        color: colors.$gray-1;
+        margin-top: 4px;
+    }
+}

@@ -9,20 +9,12 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
     page(filter: {id: {eq: $id}}) {
       title
       content {
-        ... on Title1Record {
+        ... on TypographyRecord {
           id
           __typename
           text
-        }
-        ... on Title2Record {
-          id
-          __typename
-          text
-        }
-        ... on Message1Record {
-          id
-          __typename
-          text(markdown: false)
+          variant
+          weight
         }
         ... on ProductSectionRecord {
           id
