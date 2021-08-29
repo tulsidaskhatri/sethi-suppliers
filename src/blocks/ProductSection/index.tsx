@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductCard } from "../../components/ProductCard";
 import { Tabs } from "../../components/Tabs";
 import { Category, Product } from "../../model";
+import { Title1 } from "../Typography/Title1";
 
 interface ProductSectionProps {
   title: string;
@@ -21,7 +22,7 @@ export const ProductSection = ({
     <div className={cssClasses.map((cssClass) => cssClass.name).join(" ")}>
       <div className="grid">
         <div className="col-4">
-          <h1>{title}</h1>
+          <Title1 text={title} />
         </div>
 
         <div className="col-8">

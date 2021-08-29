@@ -1,8 +1,14 @@
-import { H1 } from "../components/H1";
-import { H2 } from "../components/H2";
-import { P1 } from "../components/P1";
+import { Title1 } from "./Typography/Title1";
+import { Title2 } from "./Typography/Title2";
+import { Message1 } from "./Typography/Message1";
 import { ProductSection } from "./ProductSection";
-
+enum Components {
+  Title1 = "Title1Record",
+  Title2 = "Title2Record",
+  Message1 = "Message1Record",
+  Label1 = "Label1Record",
+  ProductSection = "ProductSectionRecord",
+}
 interface BuilderProps {
   content: any;
 }
@@ -11,14 +17,16 @@ export const Builder = ({ content }: BuilderProps) => {
     <>
       {content.map((block: any) => {
         switch (block.__typename) {
-          case "H1Record":
-            return <H1 key={block.id} {...block} />;
-          case "H2Record":
-            return <H2 key={block.id} {...block} />;
-          case "ProductSectionRecord":
+          case Components.Title1:
+            return <Title1 key={block.id} {...block} />;
+          case Components.Title2:
+            return <Title2 key={block.id} {...block} />;
+          case Components.ProductSection:
             return <ProductSection key={block.id} {...block} />;
+          case Components.Message1:
+            return <Message1 key={block.id} {...block} />;
           default:
-            return <P1 key={block.id} {...block} />;
+            return <Message1 key={block.id} {...block} />;
         }
       })}
     </>
