@@ -16,31 +16,36 @@ export const ProductSection = ({title, products, categories, cssClasses}: Produc
     const [currentTab, setCurrentTab] = useState(0);
     return (
         <div className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
-            <div className="grid header">
-                <div className="col-4">
-                    <Typography variant="title-1" text={title} />
-                </div>
+            <div className="container">
+                <div className="grid header">
+                    <div className="col-4">
+                        <Typography variant="title-1" text={title} />
+                    </div>
 
-                <div className="col-8">
-                    <Tabs
-                        list={categories.map((category) => category.title)}
-                        current={currentTab}
-                        onChange={setCurrentTab}
-                    />
+                    <div className="col-8">
+                        <Tabs
+                            list={categories.map((category) => category.title)}
+                            current={currentTab}
+                            onChange={setCurrentTab}
+                        />
+                    </div>
                 </div>
-            </div>
-            <div className="grid gap-s">
-                {products
-                    .filter((product) =>
-                        product.categories
-                            .map((category) => category.key)
-                            .includes(categories.map((category) => category.key)[currentTab])
-                    )
-                    .map((product) => (
-                        <div key={product.title} className="col-3">
-                            <ProductCard {...product} />
-                        </div>
-                    ))}
+                <div className="products-container">
+                    <ul>
+                        {products
+                            .filter((product) =>
+                                product.categories
+                                    .map((category) => category.key)
+                                    .includes(categories.map((category) => category.key)[currentTab])
+                            )
+                            .map((product) => (
+                                <li key={product.title}>
+                                    <ProductCard {...product} />
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+                <div className="scroll-track"></div>
             </div>
         </div>
     );

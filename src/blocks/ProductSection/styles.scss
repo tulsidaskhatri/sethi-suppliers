@@ -1,6 +1,51 @@
+@use '/src/styles/colors';
+
 .ProductSection--root {
-    > .header {
-        align-items: flex-end;
-        margin-bottom: 30px;
+    > .container {
+        width: 100%;
+        position: relative;
+        > .header {
+            align-items: flex-end;
+        }
+        > .products-container {
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                height: 3px;
+            }
+            &::-webkit-scrollbar-track {
+                // border-bottom: 1px solid colors.$gray-3;
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: colors.$primary;
+            }
+
+            &::-webkit-scrollbar-track-piece:end {
+                // background: transparent;
+                margin-right: 180px;
+            }
+
+            > ul {
+                list-style: none;
+                margin: 30px 0px;
+                padding: 0px;
+                white-space: nowrap;
+                display: inline-block;
+                > li {
+                    width: 300px;
+                    display: inline-block;
+                    padding: 0px 4px;
+                }
+            }
+        }
+
+        > .scroll-track {
+            height: 1px;
+            background: colors.$gray-3;
+            position: absolute;
+            bottom: 1px;
+            left: 0px;
+            right: 180px;
+        }
     }
 }
