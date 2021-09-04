@@ -1,3 +1,4 @@
+import {ComponentBaseProps} from '../../types';
 import './styles.scss';
 type Variant =
     | 'big-text-1'
@@ -22,12 +23,11 @@ type Variant =
 
 type HTMLTextBlockTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
-interface TypographyProps {
+interface TypographyProps extends ComponentBaseProps {
     text: React.ReactNode;
     variant?: Variant;
     weight?: 'regular' | 'medium' | 'bold' | 'light' | 'extra-light' | 'condensed';
     italic?: boolean;
-    className?: string;
 }
 
 const getHTMLTextBlockTag = (variant: Variant): HTMLTextBlockTag => {
@@ -62,8 +62,22 @@ const getHTMLTextBlockTag = (variant: Variant): HTMLTextBlockTag => {
     }
 };
 
-export const Typography = ({text, variant = 'label-1', weight = 'regular', italic, className}: TypographyProps) => {
+export const Typography = ({
+    text,
+    variant = 'label-1',
+    weight = 'regular',
+    italic,
+    id,
+    className,
+    style,
+}: TypographyProps) => {
     const Component = getHTMLTextBlockTag(variant);
-    const classes = `${variant} ${weight}${italic ? ' italic' : ''}${className ? ` ${className}` : ''}`;
-    return <Component className={classes}>{text}</Component>;
+    const classes = `Typography__${variant} Typography__${weight}${italic ? ' Typograhy__italic' : ''}${
+        className ? ` ${className}` : ''
+    }`;
+    return (
+        <Component className={classes} id={id} style={style}>
+            {text}
+        </Component>
+    );
 };

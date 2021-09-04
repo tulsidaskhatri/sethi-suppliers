@@ -1,14 +1,16 @@
 import './styles.scss';
 
 import {Typography} from '../../blocks/Typography';
+import {Button} from '../../blocks/Button';
 
 export interface ProductCardProps {
     title: string;
     price: number;
     image: {url: string};
+    contactText?: React.ReactNode;
 }
 
-export const ProductCard = ({title, price, image}: ProductCardProps) => (
+export const ProductCard = ({title, price, image, contactText}: ProductCardProps) => (
     <div className="ProductCard--root">
         <div
             style={{
@@ -21,6 +23,6 @@ export const ProductCard = ({title, price, image}: ProductCardProps) => (
         ></div>
         <Typography text={`Rs. ${price}`} variant="label-11" className="price" />
         <Typography text={title} variant="label-3" className="title" />
-        <button style={{width: '100%', padding: '8px 0px', marginTop: '12px'}}>Call/whatsapp</button>
+        {contactText && <Button content={contactText} className="contact-button" />}
     </div>
 );

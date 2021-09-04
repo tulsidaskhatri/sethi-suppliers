@@ -23,4 +23,11 @@
     > :first-child {
         padding-left: 0px;
     }
+
+    > .active {
+        color: colors.$primary;
+    }
+    > .inactive {
+        color: colors.$gray-1;
+    }
 }

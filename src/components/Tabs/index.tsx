@@ -13,7 +13,7 @@ export const Tabs = ({list, current, onChange}: TabsProps) => {
             {list.map((item, index) => (
                 <li
                     key={index}
-                    style={{color: current === index ? 'green' : 'black'}}
+                    className={`${current === index ? 'active' : 'inactive'}`}
                     onClick={() => {
                         current !== index && onChange(index);
                     }}

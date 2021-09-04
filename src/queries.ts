@@ -20,6 +20,7 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
           id
           __typename
           title
+          contactButtonText
           products {
             price
             title

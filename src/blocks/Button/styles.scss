@@ -1,0 +1,54 @@
+@use '/src/styles/fonts';
+@use '/src/styles/colors';
+
+.Button__ {
+    &root {
+        font-family: fonts.$primary;
+        font-size: 11pt;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &contained {
+        @extend .Button__root;
+        font-weight: 200;
+        border: none;
+        color: colors.$white;
+
+        &_primary {
+            background-color: colors.$primary;
+        }
+
+        &_secondary {
+            background-color: colors.$secondary;
+        }
+
+        &_tertiary {
+            background-color: colors.$tertiary;
+        }
+    }
+
+    &outlined {
+        @extend .Button__root;
+        font-weight: 300;
+        border-style: solid;
+        border-width: 1px;
+        background-color: unset;
+
+        &_primary {
+            color: colors.$primary;
+            border-color: colors.$primary;
+        }
+
+        &_secondary {
+            color: colors.$secondary;
+            border-color: colors.$secondary;
+        }
+
+        &_tertiary {
+            color: colors.$tertiary;
+            border-color: colors.$tertiary;
+        }
+    }
+}
