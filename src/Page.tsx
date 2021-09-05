@@ -1,5 +1,6 @@
 import {useQuery} from 'graphql-hooks';
 import {Builder} from './blocks/Builder';
+import {Header} from './blocks/Header';
 import {PAGE_QUERY} from './queries';
 
 interface PageProps {
@@ -15,6 +16,7 @@ export const Page = ({id}: PageProps) => {
     if (error) return <p>Something Bad Happened</p>;
     return (
         <>
+            {data.page.showGlobalHeader && <Header logo={data.globalHeader.logo} links={data.globalHeader.links} />}
             <Builder content={data.page.content} />
         </>
     );

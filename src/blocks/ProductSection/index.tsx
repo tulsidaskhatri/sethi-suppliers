@@ -10,12 +10,20 @@ interface ProductSectionProps {
     products: Product[];
     categories: Category[];
     cssClasses: {name: string}[];
+    htmlId?: string;
 }
 
-export const ProductSection = ({title, contactButtonText, products, categories, cssClasses}: ProductSectionProps) => {
+export const ProductSection = ({
+    htmlId,
+    title,
+    contactButtonText,
+    products,
+    categories,
+    cssClasses,
+}: ProductSectionProps) => {
     const [currentTab, setCurrentTab] = useState(0);
     return (
-        <div className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
+        <div id={htmlId} className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
             <div className="container">
                 <div className="grid header mq-desktop">
                     <div className="col-5">
@@ -24,7 +32,9 @@ export const ProductSection = ({title, contactButtonText, products, categories, 
 
                     <div className="col-7">
                         <Tabs
-                            list={categories.map((category) => category.title)}
+                            list={categories.map((category) => (
+                                <Typography text={category.title} variant={'label-2'} />
+                            ))}
                             current={currentTab}
                             onChange={setCurrentTab}
                         />

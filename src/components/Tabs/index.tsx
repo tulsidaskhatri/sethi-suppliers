@@ -2,7 +2,7 @@ import './styles.scss';
 import {Tab} from './Tab';
 
 interface TabsProps {
-    list: string[];
+    list: React.ReactNode[];
     current: number;
     onChange: (current: number) => void;
 }

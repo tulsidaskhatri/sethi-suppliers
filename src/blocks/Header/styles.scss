@@ -1,0 +1,40 @@
+@use '/src/styles/responsive' as *;
+@use '/src/styles/colors';
+.Header--root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 16px;
+    @include sm {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    > .logo {
+        width: 140px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        @include sm {
+            width: 240px;
+            margin-bottom: 0px;
+        }
+    }
+    > nav {
+        a {
+            text-decoration: none;
+            color: colors.$primary;
+        }
+    }
+
+    > .contact {
+        color: colors.$gray-1;
+        background-color: colors.$gray-4;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0px;
+        @include sm {
+            display: none;
+        }
+    }
+}

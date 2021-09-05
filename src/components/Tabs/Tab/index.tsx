@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import {useRipple} from 'react-use-ripple';
-import {Typography} from '../../../blocks/Typography';
 
 interface TabProps {
     active?: boolean;
@@ -13,7 +12,7 @@ export function Tab({active, onClick, content}: TabProps) {
     useRipple(ref);
     return (
         <li ref={ref} className={`${active ? 'active' : 'inactive'}`} onClick={onClick}>
-            <Typography text={content} variant={'label-2'} />
+            {content}
             {active && <div className="hr" />}
         </li>
     );

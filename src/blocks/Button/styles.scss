@@ -1,10 +1,10 @@
-@use '/src/styles/fonts';
+@use '/src/styles/typography';
 @use '/src/styles/colors';
 @use "/src/styles/responsive" as *;
 
 .Button__ {
     &root {
-        font-family: fonts.$primary;
+        font-family: typography.$primary;
         font-size: 11pt;
         padding: 8px 16px;
         border-radius: 4px;

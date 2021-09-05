@@ -17,14 +17,6 @@
         cursor: pointer;
     }
 
-    > :last-child {
-        padding-right: 0px;
-    }
-
-    > :first-child {
-        padding-left: 0px;
-    }
-
     > .active {
         color: colors.$primary;
     }

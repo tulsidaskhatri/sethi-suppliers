@@ -8,6 +8,7 @@ export const ROUTES_QUERY = `query RouteQuery {
 export const PAGE_QUERY = `query Page($id: ItemId) {
     page(filter: {id: {eq: $id}}) {
       title
+      showGlobalHeader
       content {
         ... on TypographyRecord {
           id
@@ -19,6 +20,7 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
         ... on ProductSectionRecord {
           id
           __typename
+          htmlId
           title
           contactButtonText
           products {
@@ -39,6 +41,16 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
             name
           }
         }
+      }
+    }
+    globalHeader {
+      logo {
+        alt
+        url
+      }
+      links {
+        label
+        link
       }
     }
   }

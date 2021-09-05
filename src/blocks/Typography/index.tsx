@@ -1,5 +1,4 @@
 import {ComponentBaseProps} from '../../types';
-import './styles.scss';
 type Variant =
     | 'big-text-1'
     | 'title-1'
