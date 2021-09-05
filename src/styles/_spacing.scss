@@ -1,3 +1,12 @@
+@use 'responsive' as *;
+
 .padding-sides-1 {
-  padding: 0px 120px;
+    padding: 0px 24px;
+    @include sm {
+        padding: 0px 48px;
+    }
+
+    @include lg {
+        padding: 0px 120px;
+    }
 }

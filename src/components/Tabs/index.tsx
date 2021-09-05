@@ -12,6 +12,7 @@ export const Tabs = ({list, current, onChange}: TabsProps) => {
         <ul className="Tabs--root">
             {list.map((item, index) => (
                 <Tab
+                    key={index}
                     active={current === index}
                     content={item}
                     onClick={() => {

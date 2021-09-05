@@ -17,12 +17,12 @@ export const ProductSection = ({title, contactButtonText, products, categories, 
     return (
         <div className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
             <div className="container">
-                <div className="grid header">
-                    <div className="col-4">
+                <div className="grid header mq-desktop">
+                    <div className="col-5">
                         <Typography variant="title-1" text={title} />
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-7">
                         <Tabs
                             list={categories.map((category) => category.title)}
                             current={currentTab}
