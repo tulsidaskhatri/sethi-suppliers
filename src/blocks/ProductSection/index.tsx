@@ -4,7 +4,6 @@ import {ProductCard} from '../../components/ProductCard';
 import {Tabs} from '../../components/Tabs';
 import {Category, Product} from '../../model';
 import {Typography} from '../Typography';
-
 interface ProductSectionProps {
     title: string;
     contactButtonText?: string;

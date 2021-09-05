@@ -8,6 +8,9 @@
         padding: 8px 16px;
         border-radius: 4px;
         cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &contained {
@@ -49,6 +52,16 @@
         &_tertiary {
             color: colors.$tertiary;
             border-color: colors.$tertiary;
+        }
+    }
+
+    &icon {
+        display: inherit;
+        padding: 0px 6px;
+        > *:first-child {
+            width: 1em;
+            height: 1em;
+            font-size: 18px;
         }
     }
 }

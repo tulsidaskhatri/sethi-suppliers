@@ -11,6 +11,8 @@ interface ButtonProps extends ComponentBaseProps {
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
     variant?: Variant;
     color?: Color;
+    startIcon?: React.ReactNode;
+    endIcon?: React.ReactNode;
 }
 
 export const Button = ({
@@ -21,6 +23,8 @@ export const Button = ({
     id,
     className,
     style,
+    startIcon,
+    endIcon,
 }: ButtonProps) => {
     const ref = useRef<HTMLButtonElement>(null);
     useRipple(ref);
@@ -28,7 +32,9 @@ export const Button = ({
     const classes = `Button__${variant} Button__${variant}_${color}${className ? ` ${className}` : ''}`;
     return (
         <button ref={ref} onClick={onClick} id={id} className={classes} style={style}>
+            {startIcon && <span className="Button__icon">{startIcon}</span>}
             {content}
+            {endIcon && <span className="Button__icon">{endIcon}</span>}
         </button>
     );
 };
