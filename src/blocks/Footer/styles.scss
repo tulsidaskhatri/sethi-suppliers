@@ -9,10 +9,22 @@
     }
     display: flex;
     flex-direction: column;
-    padding: 16px 0px;
     margin-top: 24px;
     margin-bottom: 0px;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 0px;
+    padding-right: 24px;
     @include sm {
+        padding-right: 48px;
+    }
+
+    @include lg {
+        padding-right: 120px;
+    }
+
+    @include md {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -20,6 +32,9 @@
         padding: 8px 16px;
         .title {
             text-transform: uppercase;
+        }
+        @include md {
+            padding: 48px 16px;
         }
     }
     li {
