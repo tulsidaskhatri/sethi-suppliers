@@ -1,0 +1,49 @@
+@use '/src/styles/responsive' as *;
+@use '/src/styles/colors';
+.Footer--root {
+    background-color: colors.$black;
+    color: colors.$white;
+    a {
+        color: colors.$white;
+        text-decoration: none;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    @include sm {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    > .column {
+        padding: 8px 16px;
+        .title {
+            text-transform: uppercase;
+        }
+    }
+    li {
+        list-style: none;
+    }
+    .logo-container {
+        background-color: colors.$white;
+        > img {
+            width: 280px;
+        }
+    }
+    ul {
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+.FooterColumn--root {
+    > .title {
+        margin-bottom: 6px;
+    }
+
+    > nav > .list > li {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}

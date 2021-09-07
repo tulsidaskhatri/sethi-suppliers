@@ -9,6 +9,7 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
     page(filter: {id: {eq: $id}}) {
       title
       showGlobalHeader
+      showGlobalFooter
       content {
         ... on TypographyRecord {
           id
@@ -43,14 +44,25 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
         }
       }
     }
-    globalHeader {
+    company {
       logo {
         alt
         url
       }
+    }
+    globalHeader {
       links {
         label
         link
+      }
+    }
+    globalFooter {
+      columns {
+        title
+        links {
+          label
+          link
+        }
       }
     }
   }

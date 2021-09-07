@@ -1,29 +1,33 @@
 @use '/src/styles/responsive' as *;
 @use '/src/styles/colors';
 .Header--root {
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    padding-bottom: 16px;
-    @include sm {
-        flex-direction: row;
+    > .bottom {
+        display: flex;
         align-items: center;
-        justify-content: space-between;
-    }
-
-    > .logo {
-        width: 140px;
-        margin-top: 16px;
-        margin-bottom: 16px;
+        flex-direction: column;
+        padding-bottom: 16px;
         @include sm {
-            width: 240px;
-            margin-bottom: 0px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
         }
-    }
-    > nav {
-        a {
-            text-decoration: none;
-            color: colors.$primary;
+
+        > .logo {
+            width: 140px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            @include sm {
+                width: 240px;
+                margin-bottom: 0px;
+            }
+        }
+        > nav {
+            a {
+                text-decoration: none;
+                color: colors.$primary;
+            }
         }
     }
 

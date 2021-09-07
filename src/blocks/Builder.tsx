@@ -23,7 +23,3 @@ export const Builder = ({content}: BuilderProps) => {
         </>
     );
 };
-
-// __typename: string;
-//   id: number;
-//   props: any;

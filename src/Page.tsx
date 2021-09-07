@@ -1,5 +1,6 @@
 import {useQuery} from 'graphql-hooks';
 import {Builder} from './blocks/Builder';
+import {Footer} from './blocks/Footer';
 import {Header} from './blocks/Header';
 import {PAGE_QUERY} from './queries';
 
@@ -16,19 +17,13 @@ export const Page = ({id}: PageProps) => {
     if (error) return <p>Something Bad Happened</p>;
     return (
         <>
-            {data.page.showGlobalHeader && <Header logo={data.globalHeader.logo} links={data.globalHeader.links} />}
+            {data.page.showGlobalHeader && data.company && (
+                <Header logo={data.company.logo} links={data.globalHeader.links} />
+            )}
             <Builder content={data.page.content} />
+            {data.page.showGlobalFooter && data.company && (
+                <Footer logo={data.company.logo} columns={data.globalFooter.columns} />
+            )}
         </>
     );
 };
-
-// {
-//   switch (block.__typename) {
-//     case "H1Record":
-//       return <h1 key={block.id}>{block.text}</h1>;
-//     case "H2Record":
-//       return <h4 key={block.id}>{block.text}</h4>;
-//     default:
-//       return <h1 key={block.id}>{block.text}</h1>;
-//   }
-// }

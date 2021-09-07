@@ -14,20 +14,22 @@ interface HeaderProps {
 export const Header = ({logo, links}: HeaderProps) => {
     const [currentTab, setCurrentTab] = useState(0);
     return (
-        <header className="Header--root padding-sides-1">
+        <header className="Header--root">
             <Typography className="contact" variant="label-10" weight="light" text="Order Now 03331333979" />
-            <img className="logo" src={logo?.url} alt={logo?.alt || 'company-logo'} />
-            <nav>
-                <Tabs
-                    list={links.map((link) => (
-                        <a className="Typography__label-10 Typography__medium" href={link.link}>
-                            {link.label}
-                        </a>
-                    ))}
-                    current={currentTab}
-                    onChange={setCurrentTab}
-                />
-            </nav>
+            <div className="bottom padding-sides-1">
+                <img className="logo" src={logo?.url} alt={logo?.alt || 'company-logo'} />
+                <nav>
+                    <Tabs
+                        list={links.map((link) => (
+                            <a className="Typography__label-10 Typography__medium" href={link.link}>
+                                {link.label}
+                            </a>
+                        ))}
+                        current={currentTab}
+                        onChange={setCurrentTab}
+                    />
+                </nav>
+            </div>
         </header>
     );
 };
