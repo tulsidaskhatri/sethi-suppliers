@@ -24,7 +24,6 @@ export function Footer({logo, columns}: FooterProps) {
                 </li>
             ))}
             <li className="column">
-                {' '}
                 <Typography className="title" text="Follow us on" variant="label-6" />
             </li>
         </ul>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 445.00001 489.99997"
+   version="1.1"
+   id="svg834"
+   sodipodi:docname="logo-bg.svg"
+   width="445"
+   height="490"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
+  <metadata
+     id="metadata840">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs838" />
+  <sodipodi:namedview
+     pagecolor="#ff3e0b"
+     bordercolor="#080000"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     id="namedview836"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="0.57482696"
+     inkscape:cx="524.78964"
+     inkscape:cy="205.01797"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg834" />
+  <path
+     id="srf-logo.jpg"
+     d="m -77.144611,-71.065467 c 0,0 72.7220084,118.14602 312.565031,163.78002 239.84303,45.633997 249.30803,181.443017 125.70401,316.347037 -123.60401,134.90401 -339.37403,54.819 -438.269041,54.819 -98.895019,0 -6.892001,40.93301 -6.892001,40.93301 z"
+     fill="#ffffff"
+     style="stroke-width:1" />
+</svg>
