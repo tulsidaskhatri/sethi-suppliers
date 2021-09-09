@@ -1,6 +1,7 @@
 import './styles.scss';
 import React from 'react';
 import {Typography} from '../Typography';
+import {Facebook, Instagram, Twitter} from '../../components/Icon';
 
 interface FooterProps {
     columns: ColumnProps[];
@@ -8,9 +9,23 @@ interface FooterProps {
         alt: string | null;
         url: string;
     };
+    socialPlatforms: {label: string; link: string}[];
 }
 
-export function Footer({logo, columns}: FooterProps) {
+const getSocialComponent = (label: string) => {
+    switch (label) {
+        case 'Facebook':
+            return <Facebook />;
+        case 'Instagram':
+            return <Instagram />;
+        case 'Twitter':
+            return <Twitter />;
+        default:
+            return <Facebook />;
+    }
+};
+
+export function Footer({logo, columns, socialPlatforms}: FooterProps) {
     return (
         <ul className="Footer--root">
             <li>
@@ -25,6 +40,15 @@ export function Footer({logo, columns}: FooterProps) {
             ))}
             <li className="column">
                 <Typography className="title" text="Follow us on" variant="label-6" />
+                <ul className="social-platforms">
+                    {socialPlatforms.map((platform) => (
+                        <li key={platform.label}>
+                            <a href={platform.link} target="_blank" rel="noreferrer">
+                                {getSocialComponent(platform.label)}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
             </li>
         </ul>
     );

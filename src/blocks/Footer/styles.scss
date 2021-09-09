@@ -62,6 +62,24 @@
         padding: 0px;
         margin: 0px;
     }
+    > li > .social-platforms {
+        padding: 8px 0px;
+        display: flex;
+        > li:first-child {
+            padding-left: 0px;
+        }
+        > li:last-child {
+            padding-right: 0px;
+        }
+        > li {
+            padding: 4px;
+            > a > svg {
+                width: 1em;
+                height: 1em;
+                font-size: 56px;
+            }
+        }
+    }
 }
 
 .FooterColumn--root {

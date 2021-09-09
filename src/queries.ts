@@ -48,6 +48,10 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
       logo {
         alt
         url
+      },
+      socialPlatforms {
+        label,
+        link
       }
     }
     globalHeader {

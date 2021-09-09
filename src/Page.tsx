@@ -22,7 +22,11 @@ export const Page = ({id}: PageProps) => {
             )}
             <Builder content={data.page.content} />
             {data.page.showGlobalFooter && data.company && (
-                <Footer logo={data.company.logo} columns={data.globalFooter.columns} />
+                <Footer
+                    logo={data.company.logo}
+                    socialPlatforms={data.company.socialPlatforms}
+                    columns={data.globalFooter.columns}
+                />
             )}
         </>
     );
