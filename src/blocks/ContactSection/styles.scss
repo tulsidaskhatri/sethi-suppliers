@@ -1,0 +1,58 @@
+@use '/src/styles/colors';
+@use '/src/styles/responsive' as *;
+
+.ContactSection--root {
+    > .title {
+        text-align: center;
+    }
+    > ul {
+        padding: 0px;
+        > li {
+            display: inline-block;
+            width: 100%;
+            margin: 8px 0px;
+            @include md {
+                width: 50%;
+                padding: 0px 16px;
+            }
+        }
+        @include sm {
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+
+        @include md {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+
+.ContactCard--root {
+    border-radius: 24px;
+    background-color: colors.$white;
+    width: 100%;
+    padding: 24px 16px;
+    box-shadow: 2px 2px 14px #e8e8e8;
+    > .content {
+        display: flex;
+        align-items: center;
+        > .icon {
+            padding: 8px;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        > .text {
+            padding: 0px 8px;
+            .title {
+                color: colors.$primary;
+            }
+            .details {
+                color: colors.$gray-1;
+                white-space: pre-line;
+            }
+        }
+    }
+}

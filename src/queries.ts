@@ -42,6 +42,23 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
             name
           }
         }
+        ... on ContactSectionRecord {
+          __typename
+          id
+          title
+          htmlId
+          cssClasses {
+            name
+          }
+          cards {
+            title
+            icon {
+              url
+              alt
+            }
+            details
+          }
+        }
       }
     }
     company {
