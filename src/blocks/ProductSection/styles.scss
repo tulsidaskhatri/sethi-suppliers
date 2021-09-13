@@ -6,10 +6,14 @@
         width: 100%;
         position: relative;
         > .header {
-            align-items: flex-end;
+            // display: flex;
+            // flex-direction: row;
             text-align: center;
-            @include lg {
-                text-align: unset;
+            @include md {
+                // text-align: unset;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
             }
 
             .Tabs--root {
@@ -20,59 +24,40 @@
             }
         }
         > .products-container {
-            overflow-x: scroll;
-            &::-webkit-scrollbar {
-                height: 3px;
-            }
-            &::-webkit-scrollbar-track {
-                // border-bottom: 1px solid colors.$gray-3;
-                background: transparent;
-            }
-            &::-webkit-scrollbar-thumb {
-                background: colors.$primary;
-            }
-
-            // &::-webkit-scrollbar-track-piece:end {
-            //     margin-right: 180px;
-            // }
-
             > ul {
-                list-style: none;
-                margin: 16px 0px;
+                margin: 0px;
                 padding: 0px;
 
-                @include sm {
-                    white-space: nowrap;
-                    display: inline-block;
-                    margin: 30px 0px;
-                }
+                // @include sm {
+                //     margin: 30px 0px;
+                // }
 
                 > li {
                     padding: 20px 0px;
-                    @include sm {
-                        width: 300px;
-                        display: inline-block;
-                        padding: 0px 4px;
+                    width: 100%;
+                    display: inline-block;
+                    @include rwd(480) {
+                        width: 50%;
+                        padding: 16px 8px;
+                    }
+
+                    @include md {
+                        width: 33.3%;
+                    }
+
+                    @include rwd(1200) {
+                        width: 25%;
+                    }
+
+                    @include rwd(1500) {
+                        width: 20%;
+                    }
+
+                    @include rwd(2200) {
+                        width: 16.6%;
                     }
                 }
-
-                > :first-child {
-                    padding-top: 0px;
-                }
-
-                > :last-child {
-                    padding-bottom: 0px;
-                }
             }
-        }
-
-        > .scroll-track {
-            height: 1px;
-            background: colors.$gray-3;
-            position: absolute;
-            bottom: 1px;
-            left: 0px;
-            right: 0px;
         }
     }
 }

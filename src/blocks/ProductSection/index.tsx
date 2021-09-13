@@ -25,20 +25,15 @@ export const ProductSection = ({
     return (
         <div id={htmlId} className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
             <div className="container">
-                <div className="grid header mq-desktop">
-                    <div className="col-5">
-                        <Typography variant="title-1" text={title} />
-                    </div>
-
-                    <div className="col-7">
-                        <Tabs
-                            list={categories.map((category) => (
-                                <Typography text={category.title} variant={'label-2'} />
-                            ))}
-                            current={currentTab}
-                            onChange={setCurrentTab}
-                        />
-                    </div>
+                <div className="header">
+                    <Typography variant="title-1" text={title} />
+                    <Tabs
+                        list={categories.map((category) => (
+                            <Typography text={category.title} variant={'label-2'} />
+                        ))}
+                        current={currentTab}
+                        onChange={setCurrentTab}
+                    />
                 </div>
                 <div className="products-container">
                     <ul>
@@ -55,7 +50,6 @@ export const ProductSection = ({
                             ))}
                     </ul>
                 </div>
-                <div className="scroll-track"></div>
             </div>
         </div>
     );
