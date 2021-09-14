@@ -25,7 +25,7 @@ export const AboutSection = ({
 }: AboutSectionProps) => {
     return (
         <div id={htmlId} className={`AboutSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
-            <Typography className="grid-item-1" text={title} variant="title-5" weight="bold" />
+            <Typography className="grid-item-1 title" text={title} variant="title-5" weight="bold" />
             <div className="grid-item-2">
                 <TextLogo className="logo" />
                 <Typography className="short-info-text" text={shortInfoText} variant="label-6" />
