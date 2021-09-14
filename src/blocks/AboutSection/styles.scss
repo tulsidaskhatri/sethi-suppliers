@@ -29,11 +29,23 @@
 
         > .list-title {
             padding-top: 12px;
-            padding-bottom: 12px;
+            padding-bottom: 8px;
         }
 
         > .list {
             padding-bottom: 8px;
+            > .item {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                > .icon {
+                    width: 1em;
+                    height: 1em;
+                    font-size: 28px;
+                }
+            }
         }
     }
 

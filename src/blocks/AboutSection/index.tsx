@@ -1,6 +1,7 @@
 import './styles.scss';
 import {Typography} from '../Typography';
 import {TextLogo} from '../../components/TextLogo';
+import {Tick1} from '../../components/Icon';
 interface AboutSectionProps {
     title: string;
     cssClasses: {name: string}[];
@@ -29,9 +30,14 @@ export const AboutSection = ({
                 <TextLogo className="logo" />
                 <Typography className="short-info-text" text={shortInfoText} variant="label-6" />
                 <Typography className="list-title" text={listTitle} variant="label-2" />
-                {list.split('\n').map((item) => (
-                    <Typography key={item} className="list" text={item} variant="label-8" />
-                ))}
+                <div className="list">
+                    {list.split('\n').map((item) => (
+                        <div className="item">
+                            <Tick1 className="icon" />
+                            <Typography key={item} className="label" text={item} variant="label-8" />
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className="grid-item-3">
                 <Typography className="long-info-title" text={longInfoTitle} variant="title-4" weight="bold" />
