@@ -32,9 +32,9 @@ export const AboutSection = ({
                 <Typography className="list-title" text={listTitle} variant="label-2" />
                 <div className="list">
                     {list.split('\n').map((item) => (
-                        <div className="item">
+                        <div className="item" key={item}>
                             <Tick1 className="icon" />
-                            <Typography key={item} className="label" text={item} variant="label-8" />
+                            <Typography className="label" text={item} variant="label-8" />
                         </div>
                     ))}
                 </div>
