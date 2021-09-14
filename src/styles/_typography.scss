@@ -131,7 +131,10 @@ $secondary: Roboto, $base-font-stack;
     &title-4 {
         @extend .no-margin;
         @extend .font-family-primary;
-        font-size: 32.5pt;
+        font-size: 23pt;
+        @include md {
+            font-size: 32.5pt;
+        }
     }
 
     &title-5 {
@@ -170,7 +173,10 @@ $secondary: Roboto, $base-font-stack;
     &label-4 {
         @extend .no-margin;
         @extend .font-family-primary;
-        font-size: 15pt;
+        font-size: 11pt;
+        @include md {
+            font-size: 15pt;
+        }
     }
 
     &label-5 {
@@ -182,7 +188,10 @@ $secondary: Roboto, $base-font-stack;
     &label-6 {
         @extend .no-margin;
         @extend .font-family-secondary;
-        font-size: 13.5pt;
+        font-size: 11pt;
+        @include md {
+            font-size: 13.5pt;
+        }
     }
 
     &label-7 {

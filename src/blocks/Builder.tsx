@@ -1,3 +1,4 @@
+import {AboutSection} from './AboutSection';
 import {ContactSection} from './ContactSection';
 import {ProductSection} from './ProductSection';
 import {Typography} from './Typography';
@@ -5,6 +6,7 @@ enum Components {
     ProductSection = 'ProductSectionRecord',
     Typography = 'TypographyRecord',
     ContactSection = 'ContactSectionRecord',
+    AboutSection = 'AboutSectionRecord',
 }
 interface BuilderProps {
     content: any;
@@ -18,6 +20,8 @@ export const Builder = ({content}: BuilderProps) => {
                         return <ProductSection key={block.id} {...block} />;
                     case Components.ContactSection:
                         return <ContactSection key={block.id} {...block} />;
+                    case Components.AboutSection:
+                        return <AboutSection key={block.id} {...block} />;
                     case Components.Typography:
                         return <Typography key={block.id} {...block} />;
                     default:

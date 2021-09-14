@@ -59,6 +59,20 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
             details
           }
         }
+        ... on AboutSectionRecord {
+          __typename
+          id
+          htmlId
+          cssClasses {
+            name
+          }
+          title
+          shortInfoText
+          listTitle
+          list
+          longInfoTitle
+          longInfoText
+        }
       }
     }
     company {

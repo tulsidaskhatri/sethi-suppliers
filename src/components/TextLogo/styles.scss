@@ -1,0 +1,19 @@
+@use '/src/styles/colors';
+
+.TextLogo--root {
+    width: fit-content;
+    > .line-one {
+        color: colors.$secondary;
+        margin-bottom: 4px;
+    }
+
+    > .line-two {
+        color: colors.$primary;
+    }
+
+    > .hr {
+        height: 2px;
+        margin: 4px 48px 0px;
+        background-color: colors.$tertiary;
+    }
+}

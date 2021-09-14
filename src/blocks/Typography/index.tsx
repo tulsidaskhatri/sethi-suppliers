@@ -71,7 +71,7 @@ export const Typography = ({
     style,
 }: TypographyProps) => {
     const Component = getHTMLTextBlockTag(variant);
-    const classes = `Typography__${variant} Typography__${weight}${italic ? ' Typograhy__italic' : ''}${
+    const classes = `Typography__${variant} Typography__${weight}${italic ? ' Typography__italic' : ''}${
         className ? ` ${className}` : ''
     }`;
     return (
