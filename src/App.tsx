@@ -1,7 +1,6 @@
-import React from 'react';
 import {useQuery} from 'graphql-hooks';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Page} from './Page';
+import {Page} from './components/Page';
 import {ROUTES_QUERY} from './queries';
 import './styles/shared.scss';
 

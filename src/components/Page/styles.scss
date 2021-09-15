@@ -1,0 +1,17 @@
+@use '/src/styles/colors';
+@use '/src/styles/responsive' as *;
+.Page--root {
+    > header {
+        position: fixed;
+        background-color: colors.$white;
+        z-index: 1;
+        width: 100%;
+    }
+
+    > .container {
+        padding-top: 160px;
+        @include sm {
+            padding-top: 112px;
+        }
+    }
+}
