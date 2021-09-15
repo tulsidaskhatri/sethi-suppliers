@@ -1,21 +1,41 @@
 import './styles.scss';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import {Tabs} from '../../components/Tabs';
 import {Typography} from '../Typography';
+import {GLOBAL} from '../../globals';
+import {CompanyContext} from '../../ContextProviders/Company';
 
 interface HeaderProps {
     links: {label: string; link: string}[];
+    contactLabel: string;
     logo?: {
         alt: string | null;
         url: string;
     };
 }
 
-export const Header = ({logo, links}: HeaderProps) => {
+export const Header = ({logo, contactLabel, links}: HeaderProps) => {
     const [currentTab, setCurrentTab] = useState(0);
+    const company = useContext(CompanyContext);
     return (
         <header className="Header--root">
-            <Typography className="contact" variant="label-10" weight="light" text="Order Now 03331333979" />
+            {company.contacts.length > 0 && (
+                <Typography
+                    className="contact"
+                    variant="label-10"
+                    text={
+                        <>
+                            <a
+                                href={`${GLOBAL.WHATSAPP_BASE}${company.contacts[0].phone}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {`${contactLabel} ${company.contacts[0].phone}`}
+                            </a>
+                        </>
+                    }
+                />
+            )}
             <div className="bottom padding-sides-1">
                 <img className="logo" src={logo?.url} alt={logo?.alt || 'company-logo'} />
                 <nav>

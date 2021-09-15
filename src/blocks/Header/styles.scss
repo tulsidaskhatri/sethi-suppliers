@@ -40,5 +40,8 @@
         @include sm {
             display: none;
         }
+        > a {
+            color: colors.$secondary;
+        }
     }
 }

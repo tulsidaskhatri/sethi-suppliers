@@ -18,9 +18,7 @@ export const Page = ({id}: PageProps) => {
     if (error) return <p>Something Bad Happened</p>;
     return (
         <CompanyContext.Provider value={data.company}>
-            {data.page.showGlobalHeader && data.company && (
-                <Header logo={data.company.logo} links={data.globalHeader.links} />
-            )}
+            {data.page.showGlobalHeader && data.company && <Header logo={data.company.logo} {...data.globalHeader} />}
             <Builder content={data.page.content} />
             {data.page.showGlobalFooter && data.company && (
                 <Footer
