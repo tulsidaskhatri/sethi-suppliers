@@ -1,9 +1,11 @@
 import './styles.scss';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
 import {ProductCard} from '../../components/ProductCard';
 import {Tabs} from '../../components/Tabs';
 import {Category, Product} from '../../model';
 import {Typography} from '../Typography';
+import {CompanyContext} from '../../ContextProviders/Company';
+import {GLOBAL} from '../../globals';
 interface ProductSectionProps {
     title: string;
     contactButtonText?: string;
@@ -22,6 +24,10 @@ export const ProductSection = ({
     cssClasses,
 }: ProductSectionProps) => {
     const [currentTab, setCurrentTab] = useState(0);
+    const company = useContext(CompanyContext);
+    const onClickCardButton = () => {
+        window.open(`${GLOBAL.WHATSAPP_BASE}${company.contacts[0].phone}`, '_blank');
+    };
     return (
         <div id={htmlId} className={`ProductSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`}>
             <div className="container">
@@ -45,7 +51,11 @@ export const ProductSection = ({
                             )
                             .map((product) => (
                                 <li key={product.title}>
-                                    <ProductCard {...product} contactText={contactButtonText} />
+                                    <ProductCard
+                                        {...product}
+                                        contactText={contactButtonText}
+                                        onClickButton={onClickCardButton}
+                                    />
                                 </li>
                             ))}
                     </ul>

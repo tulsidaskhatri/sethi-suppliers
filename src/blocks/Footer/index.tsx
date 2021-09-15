@@ -2,14 +2,12 @@ import './styles.scss';
 import React from 'react';
 import {Typography} from '../Typography';
 import {Facebook, Instagram, Twitter} from '../../components/Icon';
+import {Image, Link} from '../../model';
 
 interface FooterProps {
     columns: ColumnProps[];
-    logo?: {
-        alt: string | null;
-        url: string;
-    };
-    socialPlatforms: {label: string; link: string}[];
+    logo?: Image;
+    socialPlatforms: Link[];
 }
 
 const getSocialComponent = (label: string) => {

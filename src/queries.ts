@@ -84,6 +84,9 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
         label,
         link
       }
+      contacts {
+        phone
+      }
     }
     globalHeader {
       links {

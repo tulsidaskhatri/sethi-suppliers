@@ -2,6 +2,7 @@ import {useQuery} from 'graphql-hooks';
 import {Builder} from './blocks/Builder';
 import {Footer} from './blocks/Footer';
 import {Header} from './blocks/Header';
+import {CompanyContext} from './ContextProviders/Company';
 import {PAGE_QUERY} from './queries';
 
 interface PageProps {
@@ -16,7 +17,7 @@ export const Page = ({id}: PageProps) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Something Bad Happened</p>;
     return (
-        <>
+        <CompanyContext.Provider value={data.company}>
             {data.page.showGlobalHeader && data.company && (
                 <Header logo={data.company.logo} links={data.globalHeader.links} />
             )}
@@ -28,6 +29,6 @@ export const Page = ({id}: PageProps) => {
                     columns={data.globalFooter.columns}
                 />
             )}
-        </>
+        </CompanyContext.Provider>
     );
 };

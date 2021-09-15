@@ -14,3 +14,12 @@ export interface Image {
     url: string;
     alt?: string;
 }
+
+export interface Link {
+    label: string;
+    link: string;
+}
+
+export interface Contact {
+    phone: string;
+}
