@@ -27,6 +27,7 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
           products {
             price
             title
+            urduTitle
             image {
               url
             }

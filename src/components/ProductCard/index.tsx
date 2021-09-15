@@ -7,13 +7,14 @@ import {MouseEventHandler} from 'react';
 
 export interface ProductCardProps {
     title: string;
+    urduTitle: string;
     price: number;
     image: {url: string};
     contactText?: React.ReactNode;
     onClickButton?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const ProductCard = ({title, price, image, contactText, onClickButton}: ProductCardProps) => (
+export const ProductCard = ({title, urduTitle, price, image, contactText, onClickButton}: ProductCardProps) => (
     <div className="ProductCard--root">
         <div
             style={{
@@ -25,7 +26,11 @@ export const ProductCard = ({title, price, image, contactText, onClickButton}: P
             }}
         ></div>
         <Typography text={`Rs. ${price}`} variant="label-11" className="price" />
-        <Typography text={title} variant="label-3" className="title" />
+        <div className="title">
+            <Typography text={title} variant="label-3" />
+            <Typography text={urduTitle} variant="label-3" />
+        </div>
+
         {contactText && (
             <Button content={contactText} className="contact-button" startIcon={<Whatsapp />} onClick={onClickButton} />
         )}
