@@ -36,7 +36,7 @@ export const ProductCard = ({
         ></div>
         <div className="row1">
             <Typography text={`Rs. ${price}`} variant="label-11" />
-            {netWeight && <Typography text={`Net wt: ${netWeight}`} variant="label-11" />}
+            {netWeight && <Typography text={netWeight} variant="label-11" />}
         </div>
 
         <div className="row2">
