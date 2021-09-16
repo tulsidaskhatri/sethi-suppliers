@@ -2,6 +2,7 @@ export interface Product {
     title: string;
     urduTitle: string;
     price: number;
+    netWeight?: string;
     image: Image;
     categories: Category[];
 }

@@ -9,12 +9,21 @@ export interface ProductCardProps {
     title: string;
     urduTitle: string;
     price: number;
+    netWeight?: string;
     image: {url: string};
     contactText?: React.ReactNode;
     onClickButton?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const ProductCard = ({title, urduTitle, price, image, contactText, onClickButton}: ProductCardProps) => (
+export const ProductCard = ({
+    title,
+    urduTitle,
+    netWeight,
+    price,
+    image,
+    contactText,
+    onClickButton,
+}: ProductCardProps) => (
     <div className="ProductCard--root">
         <div
             style={{
@@ -25,8 +34,12 @@ export const ProductCard = ({title, urduTitle, price, image, contactText, onClic
                 backgroundSize: 'cover',
             }}
         ></div>
-        <Typography text={`Rs. ${price}`} variant="label-11" className="price" />
-        <div className="title">
+        <div className="row1">
+            <Typography text={`Rs. ${price}`} variant="label-11" />
+            {netWeight && <Typography text={`Net wt: ${netWeight}`} variant="label-11" />}
+        </div>
+
+        <div className="row2">
             <Typography text={title} variant="label-3" />
             <Typography text={urduTitle} variant="label-3" />
         </div>

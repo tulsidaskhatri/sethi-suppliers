@@ -26,6 +26,7 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
           contactButtonText
           products {
             price
+            netWeight
             title
             urduTitle
             image {

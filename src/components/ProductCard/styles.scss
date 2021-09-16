@@ -1,12 +1,15 @@
 @use '/src/styles/colors';
 
 .ProductCard--root {
-    > .price {
+    > .row1 {
         color: colors.$secondary;
         margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    > .title {
+    > .row2 {
         color: colors.$gray-1;
         line-height: 28px;
         margin-top: 4px;
