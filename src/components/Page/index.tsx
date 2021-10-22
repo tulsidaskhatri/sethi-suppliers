@@ -4,6 +4,7 @@ import {Footer} from '../../blocks/Footer';
 import {Header} from '../../blocks/Header';
 import {CompanyContext} from '../../ContextProviders/Company';
 import {PAGE_QUERY} from '../../queries';
+import {Loader} from '../Loader';
 import './styles.scss';
 interface PageProps {
     id: number;
@@ -14,7 +15,7 @@ export const Page = ({id}: PageProps) => {
             id: id,
         },
     });
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loader />;
     if (error) return <p>Something Bad Happened</p>;
     return (
         <CompanyContext.Provider value={data.company}>
