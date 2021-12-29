@@ -23,7 +23,7 @@
                 margin: 0;
 
                 > li {
-                    padding: 8px 0px;
+                    padding: 12px 0px;
                 }
             }
         }
@@ -85,5 +85,11 @@
             padding: 12px 48px;
             margin-top: 16px;
         }
+    }
+}
+
+.FeedbackItem--root {
+    > .name {
+        padding: 4px 0px 8px;
     }
 }

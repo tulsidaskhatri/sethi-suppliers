@@ -34,13 +34,14 @@ export const FeedbackSection = ({
     ratingText,
     buttonLabel,
 }: FeedbackSectionProps) => {
-    const [feedback, setFeedback] = useState<I_FeedbackRequest>({
+    const initialState = {
         contact: '',
         message: '',
         name: '',
         rating: 0,
         time: 0,
-    });
+    };
+    const [feedback, setFeedback] = useState<I_FeedbackRequest>(initialState);
     const [fetching, setFetching] = useState(false);
     const [adding, setAdding] = useState(false);
 
@@ -53,6 +54,14 @@ export const FeedbackSection = ({
         };
         getFeedbackList();
     }, []);
+
+    const isValid = () => {
+        if (feedback.rating === 0) return false;
+        if (feedback.message.length === 0) return false;
+        if (feedback.name.length === 0) return false;
+        if (feedback.contact.length === 0) return false;
+        return true;
+    };
     return (
         <div className={`FeedbackSection--root ${cssClasses.map((cssClass) => cssClass.name).join(' ')}`} id={htmlId}>
             <div className="container">
@@ -61,14 +70,17 @@ export const FeedbackSection = ({
                         <div className="loader-container">
                             <Loader />
                         </div>
-                    ) : (
+                    ) : feedbackList.length > 0 ? (
                         <ul className="list">
+                            <Typography text={feedbackListTitle} variant="title-5" weight="bold" />
                             {feedbackList.map((feedback) => (
                                 <li key={feedback.id}>
                                     <FeedbackItem {...feedback} />
                                 </li>
                             ))}
                         </ul>
+                    ) : (
+                        <></>
                     )}
                 </div>
 
@@ -85,11 +97,13 @@ export const FeedbackSection = ({
                         onChange={(newRating) => {
                             setFeedback({...feedback, rating: newRating});
                         }}
+                        edit={!adding}
                     />
                 </div>
                 <form
                     onSubmit={async (e) => {
                         e.preventDefault();
+                        if (!isValid()) return;
                         setAdding(true);
                         const newFeedbackId = await FeedbackRequest.post(feedback);
                         const newList = ([{...feedback, id: newFeedbackId}] as I_FeedbackRequest[]).concat(
@@ -97,17 +111,22 @@ export const FeedbackSection = ({
                         );
                         setFeedbackList(newList);
                         setAdding(false);
+                        console.log('initial state', initialState);
+                        setFeedback(initialState);
+                        window.scrollTo({});
                     }}
                 >
                     <div className="fieldset block">
                         <Typography className="label" variant="label-8" text={detailLabel} />
                         <textarea
                             rows={5}
+                            value={feedback.message}
                             className="field fullwidth"
                             placeholder={detailPlaceholder}
                             onChange={(e) => {
                                 setFeedback({...feedback, message: e.target.value});
                             }}
+                            readOnly={adding}
                         />
                     </div>
                     <div className="contact">
@@ -115,18 +134,22 @@ export const FeedbackSection = ({
                             <Typography className="label" variant="label-8" text={nameLabel} />
                             <input
                                 className="field"
+                                value={feedback.name}
                                 onChange={(e) => {
                                     setFeedback({...feedback, name: e.target.value});
                                 }}
+                                readOnly={adding}
                             />
                         </div>
                         <div className="fieldset inline">
                             <Typography className="label" variant="label-8" text={phoneLabel} />
                             <input
+                                value={feedback.contact}
                                 className="field"
                                 onChange={(e) => {
                                     setFeedback({...feedback, contact: e.target.value});
                                 }}
+                                readOnly={adding}
                             />
                         </div>
                     </div>
