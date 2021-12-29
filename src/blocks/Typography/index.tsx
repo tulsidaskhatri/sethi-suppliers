@@ -56,7 +56,6 @@ const getHTMLTextBlockTag = (variant: Variant): HTMLTextBlockTag => {
         case 'label-12':
             return 'p';
         default:
-            console.log('default');
             return 'p';
     }
 };

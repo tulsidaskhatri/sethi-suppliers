@@ -75,6 +75,23 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
           longInfoTitle
           longInfoText
         }
+        ... on FeedbackSectionRecord {
+          __typename
+          id
+          htmlId
+          cssClasses {
+            name
+          }
+          feedbackListTitle
+          primaryText
+          secondaryText
+          ratingText
+          detailLabel
+          detailPlaceholder
+          nameLabel
+          phoneLabel
+          buttonLabel
+        }
       }
     }
     company {
@@ -108,3 +125,5 @@ export const PAGE_QUERY = `query Page($id: ItemId) {
     }
   }
   `;
+//54393112
+//56817500 //dev

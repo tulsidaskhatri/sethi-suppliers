@@ -13,6 +13,8 @@ interface ButtonProps extends ComponentBaseProps {
     color?: Color;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
+    type?: 'submit' | 'reset' | 'button' | undefined;
+    disabled?: boolean | undefined;
 }
 
 export const Button = ({
@@ -25,13 +27,15 @@ export const Button = ({
     style,
     startIcon,
     endIcon,
+    type,
+    disabled,
 }: ButtonProps) => {
     const ref = useRef<HTMLButtonElement>(null);
     useRipple(ref);
 
     const classes = `Button__${variant} Button__${variant}_${color}${className ? ` ${className}` : ''}`;
     return (
-        <button ref={ref} onClick={onClick} id={id} className={classes} style={style}>
+        <button disabled={disabled} type={type} ref={ref} onClick={onClick} id={id} className={classes} style={style}>
             {startIcon && <span className="Button__icon">{startIcon}</span>}
             {content}
             {endIcon && <span className="Button__icon">{endIcon}</span>}

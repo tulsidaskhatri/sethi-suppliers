@@ -1,5 +1,4 @@
 import './styles.scss';
-import React from 'react';
 import {Typography} from '../Typography';
 import {Facebook, Instagram, Twitter} from '../../components/Icon';
 import {Image, Link} from '../../model';

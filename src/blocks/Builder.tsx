@@ -1,5 +1,6 @@
 import {AboutSection} from './AboutSection';
 import {ContactSection} from './ContactSection';
+import {FeedbackSection} from './FeedbackSection';
 import {ProductSection} from './ProductSection';
 import {Typography} from './Typography';
 enum Components {
@@ -7,6 +8,7 @@ enum Components {
     Typography = 'TypographyRecord',
     ContactSection = 'ContactSectionRecord',
     AboutSection = 'AboutSectionRecord',
+    FeedbackSection = 'FeedbackSectionRecord',
 }
 interface BuilderProps {
     content: any;
@@ -22,10 +24,12 @@ export const Builder = ({content}: BuilderProps) => {
                         return <ContactSection key={block.id} {...block} />;
                     case Components.AboutSection:
                         return <AboutSection key={block.id} {...block} />;
+                    case Components.FeedbackSection:
+                        return <FeedbackSection key={block.id} {...block} />;
                     case Components.Typography:
                         return <Typography key={block.id} {...block} />;
                     default:
-                        return <Typography key={block.id} {...block} />;
+                        return null;
                 }
             })}
         </>
