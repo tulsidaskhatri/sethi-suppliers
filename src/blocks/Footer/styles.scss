@@ -45,9 +45,13 @@
         background-size: contain;
         margin-bottom: 64px;
         > img {
-            width: 314px;
+            width: 80%;
             padding: 160px 16px 120px;
+            @include sm {
+                width: 314px;
+            }
         }
+
         @include md {
             margin-bottom: 0px;
             > img {
